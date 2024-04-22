@@ -16,9 +16,9 @@
 	cmd = "'' "
 	trustExitCode = true
 [alias]
-	lg = log --color --graph --oneline --abbrev-commit
-	co = checkout
-	br = branch
+	s = status
+	c = commit -m
+	lg = log --color --graph --oneline --abbrev-commit --all -n 15
 [http]
 	proxy = http://127.0.0.1:8556
 	postBuffer = 524288000
