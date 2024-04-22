@@ -1,0 +1,28 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = li6in9muyou
+	email = libq5520@mails.jlu.edu.cn
+[core]
+	autocrlf = input
+	editor = nvim
+	excludesfile = ~/.gitignore
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[alias]
+	lg = log --color --graph --oneline --abbrev-commit
+	co = checkout
+	br = branch
+[http]
+	proxy = http://127.0.0.1:8556
+	postBuffer = 524288000
+[credential "https://gitee.com"]
+	provider = generic
+[credential "https://code.fineres.com"]
+	provider = bitbucket
