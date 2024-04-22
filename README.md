@@ -1,7 +1,7 @@
 # Set up symbolic link
 
-Run in elevated powershell but maybe normal powershell works as well.
+Run in elevated `cmd.exe`
 
-```powershell
-New-Item -Path ~/.gitconfig -ItemType SymbolicLink -Value ./.gitconfig
+```cmd
+mklink C:\Users\Li6q\.gitconfig .\.gitconfig
 ```
