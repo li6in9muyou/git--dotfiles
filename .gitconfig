@@ -10,11 +10,6 @@
 	autocrlf = input
 	editor = nvim
 	excludesfile = ~/.gitignore
-[difftool "sourcetree"]
-	cmd = '' \"$LOCAL\" \"$REMOTE\"
-[mergetool "sourcetree"]
-	cmd = "'' "
-	trustExitCode = true
 [alias]
 	s = diff --staged --stat
 	ss = status -v
