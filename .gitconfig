@@ -16,7 +16,8 @@
 	cmd = "'' "
 	trustExitCode = true
 [alias]
-	s = status
+	s = diff --staged --stat
+	ss = status -v
 	c = commit -m
 	lg = log --color --graph --oneline --abbrev-commit --all -n 15
 [http]
