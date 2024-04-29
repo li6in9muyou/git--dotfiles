@@ -11,8 +11,8 @@
 	editor = nvim
 	excludesfile = ~/.gitignore
 [alias]
-	s = diff --staged --stat
-	ss = status -v
+	s = diff --stat
+	ss = diff --staged --stat
 	c = commit -m
 	lg = log --color --graph --oneline --abbrev-commit --all -n 15
 	newbranch = for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:relative)%09%(refname)' refs/remotes
