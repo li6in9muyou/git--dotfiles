@@ -15,7 +15,9 @@
 	sa = status --branch --short
 	ss = diff --staged --stat
 	c = commit -m
-	lg = log --color --graph --oneline --abbrev-commit --all -n 15
+	lg = log --color --graph \
+		--pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Creset' \
+		--abbrev-commit --all -n 15
 	newbranch = for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:relative)%09%(refname)' refs/remotes
 [http]
 	proxy = http://127.0.0.1:8556
