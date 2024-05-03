@@ -13,7 +13,7 @@
 [alias]
 	s = diff --stat
 	sa = status --branch --short
-	ss = diff --staged --stat
+	ss = s --staged
 	ssp = ss --patch
 	c = commit -m
 	lg = log --color --graph \
