@@ -14,6 +14,7 @@
 	s = diff --stat
 	sa = status --branch --short
 	ss = diff --staged --stat
+	ssp = ss --patch
 	c = commit -m
 	lg = log --color --graph \
 		--pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Creset' \
