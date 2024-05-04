@@ -12,6 +12,7 @@
 	excludesfile = ~/.gitignore
 [alias]
 	s = diff --stat
+	sp = s --patch
 	sa = status --branch --short
 	ss = s --staged
 	ssp = ss --patch
