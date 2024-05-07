@@ -32,3 +32,6 @@
 	directory = D:/projects/git--dotfiles
 	directory = ~/projects/git--dotfiles
 	directory = C:/Users/Li6q/projects/git--dotfiles
+[diff]
+	wsErrorHighlight = all
+	algorithm = histogram
