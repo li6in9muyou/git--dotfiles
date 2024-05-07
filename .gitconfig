@@ -11,10 +11,10 @@
 	editor = nvim
 	excludesfile = ~/.gitignore
 [alias]
-	s = diff --stat
-	sp = s --patch
-	sa = status --branch --short
-	ss = s --staged
+	s = status --branch --short
+	sa = diff --stat
+	sp = sa --patch
+	ss = sa --staged
 	ssp = ss --patch
 	c = commit -m
 	lg = log --color --graph \
