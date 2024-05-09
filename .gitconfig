@@ -18,7 +18,7 @@
 	ssp = ss --patch
 	c = commit -m
 	lg = log --no-merges --color --graph \
-		--pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %ar) %Creset' \
+		--pretty=format:'%Cred%h%Creset - %Cgreen(%an %ar) %C(yellow)%d%Creset %s %Creset' \
 		--abbrev-commit --all -n 15
 	lgm = lg --no-max-parents
 	newbranch = for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:relative)%09%(refname)' refs/remotes
