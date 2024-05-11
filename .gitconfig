@@ -9,7 +9,7 @@
 	email = libq5520@mails.jlu.edu.cn
 
 [core]
-	hookPath = ~/projects/git--dotfiles/hooks
+	hooksPath = ~/projects/git--dotfiles/hooks
 	autocrlf = input
 	editor = nvim
 	excludesfile = ~/.gitignore
