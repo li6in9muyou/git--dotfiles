@@ -3,14 +3,17 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [user]
 	name = li6in9muyou
 	email = libq5520@mails.jlu.edu.cn
+
 [core]
 	hookPath = ~/projects/git--dotfiles/hooks
 	autocrlf = input
 	editor = nvim
 	excludesfile = ~/.gitignore
+
 [alias]
 	s = status --branch --short
 	sa = diff --stat
@@ -24,17 +27,22 @@
 	lg = lgh --all
 	lgm = lg --no-max-parents
 	newbranch = for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:relative)%09%(refname)' refs/remotes
+
 [http]
 	proxy = http://127.0.0.1:8556
 	postBuffer = 524288000
+
 [credential "https://gitee.com"]
 	provider = generic
+
 [credential "https://code.fineres.com"]
 	provider = bitbucket
+
 [safe]
 	directory = D:/projects/git--dotfiles
 	directory = ~/projects/git--dotfiles
 	directory = C:/Users/Li6q/projects/git--dotfiles
+
 [diff]
 	wsErrorHighlight = all
 	algorithm = histogram
