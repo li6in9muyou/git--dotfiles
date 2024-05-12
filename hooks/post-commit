@@ -4,6 +4,7 @@ echo "#   git--dotfiles/hooks/post-commit, local hooks are disabled"
 echo
 echo
 
+non_push_suffix="_local"
 branch_name=$(git symbolic-ref --short HEAD)
 retcode=$?
 
