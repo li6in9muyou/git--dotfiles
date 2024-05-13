@@ -13,6 +13,7 @@
 
 [core]
 	hooksPath = ~/projects/git--dotfiles/hooks
+	hooksPath = D:/projects/git--dotfiles/hooks
 	autocrlf = input
 	editor = nvim
 	excludesfile = ~/.gitignore
