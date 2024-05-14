@@ -1,10 +1,13 @@
+# This repo must be cloned to `~/projects`
+
+Otherwise, `core.hooksPath` fails to point to correct hooks.
+
 # Set up global .gitconfig
 
 Add the follow content into `~/.gitconfig`.
 
 ```ini
 [include]
-  path = D:/projects/git--dotfiles/gitconfig
   path = ~/projects/git--dotfiles/gitconfig
 ```
 
