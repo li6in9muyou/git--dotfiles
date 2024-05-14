@@ -4,13 +4,9 @@ echo "#   git--dotfiles/hooks/post-commit, local hooks are disabled"
 echo
 echo
 
-non_push_suffix="_local"
 branch_name=$(git symbolic-ref --short HEAD)
 retcode=$?
 
 if [ $retcode -eq 0 ] ; then
-    #Only push if branch_name does not end with the non-push suffix
-    if [[ $branch_name != *$non_push_suffix ]] ; then
-        git push;
-    fi
+    git push;
 fi
