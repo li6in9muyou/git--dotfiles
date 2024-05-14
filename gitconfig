@@ -30,6 +30,7 @@
 	lga = lg --all
 	lgm = lg --no-max-parents
 	newbranch = for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:relative)%09%(refname)' refs/remotes
+        puhs = push
 
 [http]
 	proxy = http://127.0.0.1:8556
