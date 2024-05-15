@@ -14,7 +14,7 @@ Add the follow content into `~/.gitconfig`.
 # [DEPRECATED] Set up symbolic link
 
 Symbolic links in Windows systems are not reliable, sometimes they work, sometimes they don't.
-Thus this method is deprecated infavour of pure git solution.
+Thus this method is deprecated in favour of pure git solution.
 
 Run in elevated powershell
 
