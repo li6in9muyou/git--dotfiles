@@ -1,6 +1,7 @@
 # This repo must be cloned to `~/projects`
 
 Otherwise, `core.hooksPath` fails to point to correct hooks.
+`New-Item -ItemType Junction -Path C:\Users\Li6q\projects -Value D:\projects\` seems to work.
 
 # Set up global .gitconfig
 
@@ -14,7 +15,7 @@ Add the follow content into `~/.gitconfig`.
 # [DEPRECATED] Set up symbolic link
 
 Symbolic links in Windows systems are not reliable, sometimes they work, sometimes they don't.
-Thus this method is deprecated in favour of pure git solution.
+Thus this method is deprecated in favour of pure git config `[include]`.
 
 Run in elevated powershell
 
