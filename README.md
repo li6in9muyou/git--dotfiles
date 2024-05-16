@@ -1,3 +1,7 @@
+# Issues
+
+- [ ] when HEAD points to a merge commit, `git lg` shows no HEAD which is very confusing
+
 # This repo must be cloned to `~/projects`
 
 Otherwise, `core.hooksPath` fails to point to correct hooks.
