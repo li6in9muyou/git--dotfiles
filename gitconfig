@@ -23,6 +23,7 @@
 	sp = sa --patch
 	ss = sa --staged
 	ssp = ss --patch
+	v = show --stat --format=medium
 	c = commit -m
 	lg = log --no-merges --color --graph \
 		--pretty=format:'%Cred%h%Creset - %Cgreen(%an %ar) %C(yellow)%d%Creset %s %Creset' \
