@@ -26,7 +26,7 @@
 	v = show --stat --format=medium
 	c = commit -m
 	lg = log --no-merges --color --graph \
-		--pretty=format:'%Cred%h%Creset - %Cgreen(%an %ar) %C(yellow)%d%Creset %s %Creset' \
+		--pretty=format:'%Cred%h%Creset %Cgreen%an %ar %C(yellow)%d%Creset %s %Creset' \
 		--abbrev-commit -n 15
 	lga = lg --all
 	lgm = lg --no-max-parents
