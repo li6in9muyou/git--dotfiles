@@ -52,3 +52,5 @@
 [diff]
 	wsErrorHighlight = all
 	algorithm = histogram
+[rebase]
+	autoSquash = true
