@@ -21,6 +21,7 @@
 	s = status --branch --short
 	sa = diff --stat
 	sp = sa --patch
+	sap = sp
 	ss = sa --staged
 	ssp = ss --patch
 	v = show --stat --format=medium
