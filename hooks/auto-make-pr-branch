@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# 确保脚本在执行失败时停止
+set -e
+
+# 检查当前分支是否以'd/'开头
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+if [[ $current_branch =~ ^d/ ]]; then
+    # 获取origin/master的最新提交
+    master_commit=$(git ls-remote origin master | cut -f1)
+
+    # 找到当前分支和master分支的公共祖先
+    merge_base=$(git merge-base $current_branch $master_commit)
+
+    # 创建一个新的临时分支，用于squash操作
+    temp_branch="crap/temp-squash-$(date +%s)"
+    git checkout -b $temp_branch $merge_base
+
+    git reset --hard $merge_base
+    git merge --squash HEAD@{1}
+    git commit -m "auto making pr branch"
+
+    # 检查是否只有一个commit（即squash成功）
+    if [ $(git rev-list --count HEAD ^$temp_branch) -eq 1 ]; then
+        # 创建一个新的pr/<时间戳>分支
+        pr_branch="pr/$(date +%Y%m%d%H%M%S)"
+        git checkout -b $pr_branch
+    else
+        echo "Squash failed, not pushing to remote."
+    fi
+
+    echo debug cleanup
+    # 清理临时分支
+    git checkout $current_branch
+    git branch -D $temp_branch
+else
+    echo "Not a 'd/' branch, skipping squash."
+fi
