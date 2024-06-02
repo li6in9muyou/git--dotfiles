@@ -26,11 +26,11 @@
 	ssp = ss --patch
 	v = show --stat --format=medium
 	c = commit -m
-	lg = log --no-merges --color --graph \
+	lg = log --color --graph \
 		--pretty=format:'%Cred%h%Creset %Cgreen%an %ar %C(yellow)%d%Creset %s %Creset' \
 		--abbrev-commit -n 15
 	lga = lg --all
-	lgm = lg --no-max-parents
+	lgl = lg --no-merges
 	newbranch = for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:relative)%09%(refname)' refs/remotes
 	puhs = push
 	pulll = pull
