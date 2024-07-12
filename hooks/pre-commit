@@ -1,20 +1,22 @@
 #!/bin/sh
 
+DENIED_WORDS=("DO NOT COMMIT" "libq" '-debug')
+
 echo "#   git--dotfiles/hooks/pre-commit, local hooks are disabled"
-echo -n "CHECK IF 'DO NOT COMMIT' IS PRESENT"
+echo -n "CHECK IF DENIED WORDS ARE PRESENT"
 
-DO_NOT_COMMIT=$(git diff --staged --patch | grep 'DO NOT COMMIT' -i -C 6)
+for word in "${DENIED_WORDS[@]}"; do
+  DIFF_OUTPUT=$(git diff --staged --patch | grep -i -C 6 "$word")
 
-if [ -n "$DO_NOT_COMMIT" ]; then
-  echo
-  echo -e "\033[31mAborted: diff contains 'DO NOT COMMIT'"
-  echo "Aborted: diff contains 'DO NOT COMMIT'"
-  echo -e "Aborted: diff contains 'DO NOT COMMIT'\033[0m"
-  echo
-  git diff --staged --patch --color | grep 'DO NOT COMMIT' -C 8
-  exit 1
-else
-  echo -e "\033[32m OK\033[0m"
-fi
+  if [ -n "$DIFF_OUTPUT" ]; then
+    echo
+    echo -e "\033[31mAborted: diff contains '$word'\033[0m"
+    echo -e "\033[31mAborted: diff contains '$word'\033[0m"
+    echo -e "\033[31mAborted: diff contains '$word'\033[0m"
+    git diff --staged --patch --color | grep "$word" -C 8
+    exit 1
+  fi
+done
 
+echo -e "\033[32m OK\033[0m"
 exit 0
