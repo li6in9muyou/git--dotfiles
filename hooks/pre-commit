@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DENIED_WORDS=("DO NOT COMMIT" "libq" "-debug")
+DENIED_WORDS=("DO NOT COMMIT" "libq" "debug")
 
 echo "#   git--dotfiles/hooks/pre-commit, local hooks are disabled"
 echo -n "CHECK IF DENIED WORDS ARE PRESENT"
