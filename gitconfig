@@ -16,6 +16,7 @@
 	autocrlf = input
 	editor = nvim
 	excludesfile = ~/.gitignore
+	whitespace = blank-at-eol,space-before-tab,tab-in-indent,blank-at-eof
 
 [alias]
 	s = status --branch --short
