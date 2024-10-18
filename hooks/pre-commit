@@ -9,10 +9,11 @@ for word in "${DENIED_WORDS[@]}"; do
   DIFF_OUTPUT=$(git diff --staged --patch | grep -i -C 6 -- "$word")
 
   if echo "$DIFF_OUTPUT" | grep -q "^+.*$word"; then
-    echo
-    echo -e "\033[31mAborted: diff adds '$word'\033[0m"
     # git diff --staged --patch --color | grep "$word" -C 8
     git diff --staged --patch | grep -C 4 "^+.*$word" --color
+    echo
+    echo -e "\033[31mAborted: diff adds '$word'\033[0m"
+    echo
     exit 1
   fi
 done
