@@ -31,6 +31,7 @@
 		--abbrev-commit -n 15
 	lga = lg --all
 	lgl = lg --no-merges
+	lgll = lg --no-merges -n 999
 	newbranch = for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:relative)%09%(refname)' refs/remotes
 	puhs = push
 	pulll = pull
