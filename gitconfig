@@ -20,10 +20,9 @@
 
 [alias]
 	s = status --branch --short
-	sa = diff --stat
-	sp = sa --patch
-	sap = sp
-	ss = sa --staged
+	sa = diff --stat=200
+	sap = sa --patch
+	ss = sa --staged --stat=200
 	ssp = ss --patch
 	v = show --stat --format=medium
 	c = commit -m
