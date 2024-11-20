@@ -29,7 +29,7 @@
 	lg = log --color --graph \
 		--pretty=format:'%Cred%h%Creset %Cgreen%an %ar %C(yellow)%d%Creset %s %Creset' \
 		--abbrev-commit -n 15
-	lga = lg --all
+	lga = lg --branches --remotes --tags
 	lgl = lg --no-merges
 	lgll = lg --no-merges -n 999
 	newbranch = for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:relative)%09%(refname)' refs/remotes
