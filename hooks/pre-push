@@ -1,0 +1,18 @@
+#!/bin/bash
+
+HOOK_DIR="$(dirname "$0")"
+
+echo "#   git--dotfiles/hooks/pre-push, local hooks are disabled"
+echo -n "CHECKING IF ALL PRE-PUSH SCRIPTS PASS"
+
+# Loop through all *.pre-push.sh files in the same directory as this script and execute them
+for hook in "$HOOK_DIR"/*.pre-push.sh; do
+    if [ -x "$hook" ]; then
+        if ! "$hook" "$@"; then
+            echo "Push blocked: $hook failed."
+            exit 1
+        fi
+    fi
+done
+
+exit 0
