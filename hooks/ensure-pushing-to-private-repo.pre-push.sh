@@ -4,7 +4,7 @@ CONFIG_FILE="$(dirname "$0")/check-private-repo.txt"
 REMOTE_URL=$2
 
 if [ ! -f "$CONFIG_FILE" ]; then
-    echo "Push blocked: Configuration file '$CONFIG_FILE' not found."
+    echo -e "\033[31mConfiguration file '$(basename $CONFIG_FILE)' not found.\033[0m"
     exit 1
 fi
 
@@ -21,7 +21,8 @@ while IFS= read -r line || [[ -n "$line" ]]; do
     if match_regex "$REMOTE_URL" "$regex_A"; then
         any_match_found=true
         if ! match_regex "$REMOTE_URL" "$regex_B"; then
-            echo "Push blocked: $REMOTE_URL matches '$regex_A' but does not match '$regex_B'."
+            echo -e "remote url '$REMOTE_URL' matches \033[32m'$regex_A'\033[0m"
+            echo -e "but does not match \033[32m'$regex_B'\033[0m"
             exit 1
         fi
     fi
