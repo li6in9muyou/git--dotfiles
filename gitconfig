@@ -6,13 +6,13 @@
 
 [init]
 	defaultBranch = main
+	templateDir = ~/projects/git--dotfiles/git-template-dir
 
 [user]
 	name = li6in9muyou
 	email = libq5520@mails.jlu.edu.cn
 
 [core]
-	hooksPath = ~/projects/git--dotfiles/hooks
 	autocrlf = input
 	editor = nvim
 	excludesfile = ~/.gitignore
