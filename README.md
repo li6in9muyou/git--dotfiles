@@ -1,7 +1,3 @@
-# Issues
-
-- [ ] when HEAD points to a merge commit, `git lg` shows no HEAD which is very confusing
-
 # 1 This repo must be cloned to `~/projects`
 
 So that `git config init.templateDir` can find `./git-template-dir`.
