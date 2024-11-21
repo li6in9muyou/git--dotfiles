@@ -31,9 +31,8 @@ while IFS= read -r line || [[ -n "$line" ]]; do
 done < "$CONFIG_FILE"
 
 if ! $any_match_found; then
-    echo "Push blocked: No match found for the remote URL '$REMOTE_URL'."
+    echo -e "\033[31mCan not push to $REMOTE_URL, add it to config file\033[0m"
     exit 1
 fi
 
-echo "All checks passed. Proceeding with push."
 exit 0
