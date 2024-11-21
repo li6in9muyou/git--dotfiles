@@ -2,12 +2,11 @@
 
 - [ ] when HEAD points to a merge commit, `git lg` shows no HEAD which is very confusing
 
-# This repo must be cloned to `~/projects`
+# 1 This repo must be cloned to `~/projects`
 
-Otherwise, `core.hooksPath` fails to point to correct hooks.
-`New-Item -ItemType Junction -Path C:\Users\Li6q\projects -Value D:\projects\` seems to work.
+So that `git config init.templateDir` can find `./git-template-dir`.
 
-# Set up global .gitconfig
+# 2 Set up global .gitconfig
 
 Add the follow content into `~/.gitconfig`.
 
