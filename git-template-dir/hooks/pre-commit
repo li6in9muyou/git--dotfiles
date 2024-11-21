@@ -2,8 +2,7 @@
 
 DENIED_WORDS=("DO NOT COMMIT" "libq" "console.debug" "console.log")
 
-echo "#   git--dotfiles/hooks/pre-commit, local hooks are disabled"
-echo -n "CHECK IF DENIED WORDS ARE PRESENT"
+echo "#   git--dotfiles/hooks/pre-commit"
 
 for word in "${DENIED_WORDS[@]}"; do
   DIFF_OUTPUT=$(git diff --staged --patch | grep -i -C 6 -- "$word")
@@ -18,5 +17,4 @@ for word in "${DENIED_WORDS[@]}"; do
   fi
 done
 
-echo -e "\033[32m OK\033[0m"
 exit 0
