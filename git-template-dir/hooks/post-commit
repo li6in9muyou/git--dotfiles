@@ -1,12 +1,12 @@
 #!/bin/sh
 
-echo "#   git--dotfiles/hooks/post-commit, local hooks are disabled"
+echo "#   git--dotfiles/hooks/post-commit"
 
 branch_name=$(git symbolic-ref --short HEAD)
 retcode=$?
 
 if [ $retcode -ne 0 ]; then
-    echo "Failed to get the current branch name."
+    echo "\033[31mFailed to get the current branch name.\033[0m"
     exit 1
 fi
 
@@ -15,7 +15,7 @@ WHITELIST=("my-fork" "libq" "li6in9muyou" "li6q")
 remote_name=$(git config --get branch."$branch_name".remote)
 
 if [ -z "$remote_name" ]; then
-    echo "No remote tracking branch found for $branch_name"
+    echo "\033[31mNo remote tracking branch found for $branch_name\033[0m"
     exit 1
 fi
 
@@ -32,5 +32,5 @@ done
 if [ "$WHITELIST_MATCHED" = true ]; then
     git push
 else
-    echo "REFUSE TO PUSH"
+    echo "\033[31mREFUSE TO PUSH\033[0m"
 fi
