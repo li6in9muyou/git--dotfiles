@@ -1,8 +1,4 @@
-# 1 This repo must be cloned to `~/projects`
-
-So that `git config init.templateDir` can find `./git-template-dir`.
-
-# 2 Set up global .gitconfig
+# 1 Set up global .gitconfig
 
 Add the follow content into `~/.gitconfig`.
 
