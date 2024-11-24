@@ -4,17 +4,25 @@ DENIED_WORDS=("DO NOT COMMIT" "libq" "console.debug" "console.log")
 
 echo "#   git--dotfiles/hooks/pre-commit"
 
-for word in "${DENIED_WORDS[@]}"; do
-  DIFF_OUTPUT=$(git diff --staged --patch | grep -i -C 6 -- "$word")
+STAGED_FILES=$(git diff --name-only --staged)
 
-  if echo "$DIFF_OUTPUT" | grep -q "^+.*$word"; then
-    # git diff --staged --patch --color | grep "$word" -C 8
-    git diff --staged --patch | grep -C 4 "^+.*$word" --color
-    echo
-    echo -e "\033[31mAborted: diff adds '$word'\033[0m"
-    echo
-    exit 1
-  fi
+should_block_commit=0
+for file in $STAGED_FILES; do
+  echo "libq file $file"
+  for word in "${DENIED_WORDS[@]}"; do
+    DIFF_OUTPUT=$(git diff --staged --patch | grep -i -C 6 -- "$word")
+
+    if echo "$DIFF_OUTPUT" | grep -q "^+.*$word"; then
+      git diff --staged --patch | grep -C 4 "^+.*$word" --color
+      echo -e "\033[31mAborted: diff adds '$word'\033[0m"
+      echo -e "\033[31mFile: '$file'\033[0m"
+      should_block_commit=1
+      break
+    fi
+  done
 done
 
-exit 0
+if should_block_commit; then
+  exit 1
+else
+  exit 0
