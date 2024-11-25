@@ -9,7 +9,7 @@ STAGED_FILES=$(git diff --name-only --staged)
 should_block_commit=0
 for file in $STAGED_FILES; do
   for word in "${DENIED_WORDS[@]}"; do
-    DIFF_OUTPUT=$(git diff --staged --patch | grep -i -C 6 -- "$word")
+    DIFF_OUTPUT=$(git diff --staged --patch -- "$file" | grep -i -C 3 -- "$word")
 
     if echo "$DIFF_OUTPUT" | grep -q "^+.*$word"; then
       git diff --staged --patch | grep -C 4 "^+.*$word" --color
