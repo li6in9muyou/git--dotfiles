@@ -6,7 +6,7 @@ branch_name=$(git symbolic-ref --short HEAD)
 retcode=$?
 
 if [ $retcode -ne 0 ]; then
-    echo "\033[31mFailed to get the current branch name.\033[0m"
+    echo -e "\033[31mFailed to get the current branch name.\033[0m"
     exit 1
 fi
 
