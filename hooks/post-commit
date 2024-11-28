@@ -15,7 +15,7 @@ WHITELIST=("my-fork" "libq" "li6in9muyou" "li6q")
 remote_name=$(git config --get branch."$branch_name".remote)
 
 if [ -z "$remote_name" ]; then
-    echo "\033[31mNo remote tracking branch found for $branch_name\033[0m"
+    echo -e "\033[31mNo remote tracking branch found for $branch_name\033[0m"
     exit 1
 fi
 
