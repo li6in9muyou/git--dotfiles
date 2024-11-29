@@ -32,5 +32,5 @@ done
 if [ "$WHITELIST_MATCHED" = true ]; then
     git push
 else
-    echo "\033[31mREFUSE TO PUSH\033[0m"
+    echo -e "\033[31mREFUSE TO PUSH\033[0m"
 fi
