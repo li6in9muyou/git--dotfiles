@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. "$(dirname "$0")/ensure-husky-runs.sh"
+
 echo "#   git--dotfiles/hooks/post-commit"
 
 branch_name=$(git symbolic-ref --short HEAD)

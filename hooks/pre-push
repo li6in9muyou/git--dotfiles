@@ -2,6 +2,8 @@
 
 HOOK_DIR="$(dirname "$0")"
 
+. "$HOOK_DIR/ensure-husky-runs.sh"
+
 echo "#   git--dotfiles/hooks/pre-push"
 
 any_failed=false
