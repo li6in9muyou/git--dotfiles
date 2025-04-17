@@ -1,28 +1,23 @@
-#!/bin/sh
+#!/bin/bash
 
-DENIED_WORDS=("DO NOT COMMIT" "libq" "console.debug" "console.log")
+HOOK_DIR="$(dirname "$0")"
 
 echo "#   git--dotfiles/hooks/pre-commit"
 
-STAGED_FILES=$(git diff --name-only --staged)
-
-should_block_commit=0
-for file in $STAGED_FILES; do
-  for word in "${DENIED_WORDS[@]}"; do
-    DIFF_OUTPUT=$(git diff --staged --patch -- "$file" | grep -i -C 3 -- "$word")
-
-    if echo "$DIFF_OUTPUT" | grep -q "^+.*$word"; then
-      git diff --staged --patch | grep -C 4 "^+.*$word" --color
-      echo -e "\033[31mAborted: diff adds '$word'\033[0m"
-      echo -e "\033[31mFile: '$file'\033[0m"
-      should_block_commit=1
-      break
+any_failed=false
+for hook in "$HOOK_DIR"/*.pre-commit.sh; do
+    if [ -x "$hook" ]; then
+        if ! "$hook" "$@"; then
+          echo -e "\033[31mFailed: $(basename $hook)\033[0m"
+            any_failed=true
+        fi
     fi
-  done
 done
 
-if (( should_block_commit == 1 )); then
-  exit 1
-else
-  exit 0
+# If any hook has failed, exit with a non-zero status
+if [ "$any_failed" = true ]; then
+    echo -e "\033[31m#   Aborted\033[0m"
+    exit 1
 fi
+
+exit 0
