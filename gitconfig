@@ -27,7 +27,7 @@
 	v = show --stat --format=medium
 	c = commit -m
 	lg = log --color --graph \
-		--pretty=format:'%Cred%h%Creset %Cgreen%an %ar %C(yellow)%d%Creset %s %Creset' \
+		--pretty=format:'%Cred%h%Creset %Cgreen%an %as %C(yellow)%d%Creset %s %Creset' \
 		--abbrev-commit -n 15
 	lga = lg --branches --remotes --tags
 	lgl = lg --no-merges
