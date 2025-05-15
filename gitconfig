@@ -32,6 +32,7 @@
 	lga = lg --branches --remotes --tags
 	lgl = lg --no-merges
 	lgll = lg --no-merges -n 999
+	lgg = lg -n 999
 	newbranch = for-each-ref --sort='committerdate:iso8601' --format='%(committerdate:relative)%09%(refname)' refs/remotes
 	puhs = push
 	pulll = pull
