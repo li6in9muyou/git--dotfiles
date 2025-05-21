@@ -13,8 +13,7 @@ DENIED_WORDS=(
 
 STAGED_FILES=$(git diff --name-only --staged)
 
-commit_msg=$(git log -n 1 --pretty=%B)
-if echo "$commit_msg" | grep -q "^debug:"; then
+if cat $1 | grep -q "^debug:"; then
     echo -e "\033[32mskipped ensure-no-debug-log-or-my-name: debug commit\033[0m"
     exit 0
 fi

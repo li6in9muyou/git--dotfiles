@@ -1,3 +1,25 @@
 #!/bin/bash
 
-. "$(dirname "$0")/ensure-husky-runs.sh"
+HOOK_DIR="$(dirname "$0")"
+
+. "$HOOK_DIR/ensure-husky-runs.sh"
+
+echo "#   git--dotfiles/hooks/commit-msg"
+
+any_failed=false
+for hook in "$HOOK_DIR"/*.commit-msg.sh; do
+    if [ -x "$hook" ]; then
+        if ! "$hook" "$@"; then
+          echo -e "\033[31mFailed: $(basename $hook)\033[0m"
+            any_failed=true
+        fi
+    fi
+done
+
+# If any hook has failed, exit with a non-zero status
+if [ "$any_failed" = true ]; then
+    echo -e "\033[31m#   Aborted\033[0m"
+    exit 1
+fi
+
+exit 0
