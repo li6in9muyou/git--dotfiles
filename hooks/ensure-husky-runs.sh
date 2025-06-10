@@ -10,4 +10,5 @@ husky_script="./.husky/$hook_name"
 if [ -f "$husky_script" ]; then
   echo "#   git--dotfiles/hooks/ensure-husky-runs/$hook_name"
   . "$husky_script"
+  # TODO: stop the commit if any husky script fails
 fi
