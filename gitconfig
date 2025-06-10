@@ -19,6 +19,7 @@
 	whitespace = blank-at-eol,space-before-tab,tab-in-indent,blank-at-eof
 
 [alias]
+	rv = remote -v show
 	s = status --branch --short
 	sa = diff --stat=200
 	sap = sa --patch
