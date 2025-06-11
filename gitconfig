@@ -80,10 +80,11 @@
 	syash = stash
 	tsash = stash
 	stsh = stash
-	st0 = git stash show -p 0
-	st1 = git stash show -p 1
-	st2 = git stash show -p 2
-	st3 = git stash show -p 3
+	st = stash list
+	st0 = stash show -p 0
+	st1 = stash show -p 1
+	st2 = stash show -p 2
+	st3 = stash show -p 3
 
 [http]
 	proxy = http://127.0.0.1:8556
