@@ -19,6 +19,7 @@
 	whitespace = blank-at-eol,space-before-tab,tab-in-indent,blank-at-eof
 
 [alias]
+	unhusky = config --unset core.hookspath
 	rv = remote -v show
 	s = status --branch --short
 	sa = diff --stat=200
@@ -26,7 +27,8 @@
 	ss = sa --staged --stat=200
 	ssp = ss --patch
 	v = show --stat --format=medium
-	c = commit -m
+	c = -c core.hookspath=~/projects/git--dotfiles/hooks commit -m
+	comi = -c core.hookspath=~/projects/git--dotfiles/hooks commit
 	lg = log --color --graph \
 		--pretty=format:'%Cred%h%Creset %Cgreen%an %as %C(yellow)%d%Creset %s %Creset' \
 		--abbrev-commit -n 15
