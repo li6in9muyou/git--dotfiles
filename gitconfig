@@ -28,7 +28,7 @@
 	ssp = ss --patch
 	v = show --stat --format=medium
 	c = -c core.hookspath=~/projects/git--dotfiles/hooks commit -m
-	comi = -c core.hookspath=~/projects/git--dotfiles/hooks commit
+	cc = -c core.hookspath=~/projects/git--dotfiles/hooks commit
 	lg = log --color --graph \
 		--pretty=format:'%Cred%h%Creset %Cgreen%an %as %C(yellow)%d%Creset %s %Creset' \
 		--abbrev-commit -n 15
