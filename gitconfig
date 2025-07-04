@@ -73,6 +73,7 @@
 	checlout = checkout
 	checjout = checkout
 	stahs = stash
+	stassh = stash
 	stah = stash
 	satsh = stash
 	statsh = stash
