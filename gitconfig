@@ -38,6 +38,7 @@
 	lgll = lg --no-merges -n 999
 	lgg = lg -n 999
 	newbranch = for-each-ref --sort='committerdate:iso8601' --format='%(committerdate:relative)%09%(refname)' refs/remotes
+	pforce = push --force-with-lease
 	puhs = push
 	pulll = pull
 	chekcout = checkout
