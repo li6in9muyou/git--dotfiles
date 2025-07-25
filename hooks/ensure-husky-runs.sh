@@ -11,7 +11,7 @@ if [ -f "$husky_script" ]; then
   echo "#   git--dotfiles/hooks/ensure-husky-runs/$hook_name"
 
   if [ -f "./.fuck-husky" ]; then
-    echo -e "\033[32mFUCK HUSKY FUCK HUSKY FUCK HUSKY\033[0m"
+    echo -e "\033[32mFUCK HUSKY\033[0m"
   else
     . "$husky_script"
     if [ $? -ne 0 ]; then
