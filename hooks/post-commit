@@ -32,7 +32,7 @@ for keyword in "${WHITELIST[@]}"; do
 done
 
 if [ "$WHITELIST_MATCHED" = true ]; then
-    git push
+    git pforce
 else
     echo -e "\033[31mREFUSE TO PUSH TO A PUBLIC REPO, REMOTE WAS $remote_name $remote_url\033[0m"
 fi
