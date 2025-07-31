@@ -110,3 +110,6 @@
 
 [rebase]
 	autoSquash = true
+
+[push]
+	default = current
