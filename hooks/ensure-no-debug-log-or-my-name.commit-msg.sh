@@ -28,7 +28,7 @@ for file in $STAGED_FILES; do
   diff_of_file=$(git diff --staged --patch -- "$file")
 
   for word in "${DENIED_WORDS[@]}"; do
-    if echo "$diff_of_file" | grep -qiE "^+.*$word"; then
+    if echo "$diff_of_file" | grep -qi "^+.*$word"; then
       git diff --staged --patch | grep -C 4 "^+.*$word" --color
       echo -e "\033[31mAborted: diff adds '$word'\033[0m"
       echo -e "\033[31mFile: '$file'\033[0m"
