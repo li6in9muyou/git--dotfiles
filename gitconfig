@@ -34,6 +34,7 @@
 		--pretty=format:'%Cred%h%Creset %Cgreen%an %as %C(yellow)%d%Creset %s %Creset' \
 		--abbrev-commit -n 15
 	lga = lg --branches --remotes --tags
+	lgaa = lg --branches --remotes --tags -n 999
 	lgl = lg --no-merges
 	lgll = lg --no-merges -n 999
 	lgg = lg -n 999
